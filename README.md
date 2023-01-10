@@ -1,9 +1,6 @@
 # React Native Firebase App Template
 
-Thanks for your purchase.
-
-In case of any questions or problems, please contact me at:
-hello@reactnativemarket.com
+## use this as a starting point for an AI startup service. 
 
 ## Demo
 
