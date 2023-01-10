@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Firebase App Template",
+    "slug": "firebase-app-template",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "facebookScheme": "fb820370405209413",
+    "facebookAppId": "820370405209413",
+    "facebookDisplayName": "React Native Market",
+    "ios": {
+      "bundleIdentifier": "com.reactnativemarket.firebase",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.reactnativemarket.firebase",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
