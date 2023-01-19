@@ -1,4 +1,4 @@
-# React Native Firebase App Template
+# GPT Wager
 
 ## use this as a starting point for an AI startup service. 
 
