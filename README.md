@@ -4,7 +4,7 @@
 
 ## Demo
 
-https://react-native-app-template.web.app/
+[wager](https://gptwager.vercel.app/)
 
 ## How to use?
 
