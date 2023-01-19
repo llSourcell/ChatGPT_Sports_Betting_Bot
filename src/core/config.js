@@ -1,13 +1,12 @@
 // Replace with your own firebase config!
 export const FIREBASE_CONFIG = {
-  apiKey: 'AIzaSyBDsdN3XWM5D2-c_ti5j44GrhMnBHNmSF0',
-  authDomain: 'react-native-market-2861b.firebaseapp.com',
-  databaseURL: 'https://react-native-market-2861b.firebaseio.com',
-  projectId: 'react-native-market-2861b',
-  storageBucket: 'react-native-market-2861b.appspot.com',
-  messagingSenderId: '878215484396',
-  appId: '1:878215484396:web:c36074bccb0b5693b0a6c9',
-  measurementId: 'G-317PLP59P2',
+ apiKey: "AIzaSyB55OOWTWROQumWL84P79txhwD2HspvSZs",
+  authDomain: "gpt-wager.firebaseapp.com",
+  projectId: "gpt-wager",
+  storageBucket: "gpt-wager.appspot.com",
+  messagingSenderId: "380002747460",
+  appId: "1:380002747460:web:7f3191826cc2c84eaf6811",
+  measurementId: "G-YG2GY8D0FB"
 }
 
 // Replace with your own IDs! follow the guides here:
