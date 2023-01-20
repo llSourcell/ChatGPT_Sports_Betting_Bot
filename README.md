@@ -5,6 +5,8 @@
 ## Demo
 
 [wager](https://gptwager.vercel.app/)
+[Colab 1: Arbitrage](https://colab.research.google.com/drive/1asMXW_1wcL0G0mcgttF955qrDah9HubF?usp=sharing)
+[Colab 2: Machine Learning](https://colab.research.google.com/drive/1DbPgAVf0D_Q_bmYM20R5zxgKsqftWjgt?usp=sharing)
 
 ## How to use?
 
