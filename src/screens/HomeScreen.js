@@ -19,26 +19,7 @@ export default function HomeScreen({ navigation }) {
 
       <TopBar title="Home" />
       <View style={styles.container}>
-      NBA Winning Team Prediction for 1/18:22: 
-      <br></br>
-      - The Knicks will beat the Wizards
-      <br></br>
-      - The Mavericks will beat the Hawks
-      <br></br>
-      - The Rockets will beat the Hornets
-      <br></br>
-      - The Grizzlies will beat the Cavaliers
-      <br></br>
-      - The Pelicans will beat the Heat
-      <br></br>
-      - The Thunder will beat the Pacer
-      <br></br>
-      - The Jazz will beat the Clippers
-      <br></br>
-      - The Nuggets will beat the Timberwolves
-      <br></br>
-      - The Lakers will beat the Kings. 
-      
+      //pull predictions from PyTorch Model, running Flask
       </View>
     </>
   )
