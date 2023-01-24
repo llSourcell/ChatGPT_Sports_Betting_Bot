@@ -20,8 +20,6 @@ Make Bets with Predictions here:
 - [DexSport](https://dexsport.io/)
 - [Get Metamask](https://metamask.io/)
 
-![alt text](https://i.ibb.co/9NsnxHK/Screen-Shot-2023-01-24-at-1-20-44-PM.png)
-
 
 ## Setup Instructions (hard mode)
 
