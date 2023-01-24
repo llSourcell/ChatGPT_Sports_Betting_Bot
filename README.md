@@ -1,14 +1,18 @@
-# GPT Wager
+# ChatGPT Sports Betting Bot
 
-## use this as a starting point for an AI startup service. 
+This is the code for the "ChatGPT Sports Betting Bot" Video by Siraj Raval on Youtube. This repository is a starter template for you to build your own sports betting bot.
 
-## Demo
+## Versions
 
-[wager](https://gptwager.vercel.app/)
-[Colab 1: Arbitrage](https://colab.research.google.com/drive/1asMXW_1wcL0G0mcgttF955qrDah9HubF?usp=sharing)
-[Colab 2: Machine Learning](https://colab.research.google.com/drive/1DbPgAVf0D_Q_bmYM20R5zxgKsqftWjgt?usp=sharing)
+1. [Version 1: Arbitrage Bot](https://colab.research.google.com/drive/1asMXW_1wcL0G0mcgttF955qrDah9HubF?usp=sharing)
+2. [Version 2: Deep Learning Bot](https://colab.research.google.com/drive/1DbPgAVf0D_Q_bmYM20R5zxgKsqftWjgt?usp=sharing)
 
-## How to use?
+## Setup Instructions
+
+If you just want to run a sports betting bot in the cloud without having to install any dependencies or deploy your own version, run either of the
+two colab notebooks above. If you want to deploy your own sports betting bot and have it make predictions consistently, follow the setup instructions below to initialize your firebase app template for vercel deployment. The app still needs to fetch predictions from the python back-end and display it on the react front end, I just did it manually for the video. It also doesn't yet make bets programmatically, I have to do that manually. It was difficult for me to find a programmatic betting API.  
+
+## How to use
 
 1. Download or clone this repo.
 
