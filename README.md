@@ -15,6 +15,11 @@ And get API keys from
 - [Twitter](https://developer.twitter.com/en/docs/twitter-api)
 - [The Odds](https://the-odds-api.com/)
 
+Make Bets with Predictions here:
+
+- [DexSport](https://dexsport.io/)
+- [Get Metamask](https://metamask.io/)
+
 ## Setup Instructions (hard mode)
 
 If you want to deploy your own sports betting bot and have it make predictions consistently, follow the setup instructions below to initialize your firebase app template for vercel deployment. The app still needs to fetch predictions from the python back-end and display it on the react front end, I just did it manually for the video. It also doesn't yet make bets programmatically, I have to do that manually. It was difficult for me to find a programmatic betting API.  
