@@ -28,7 +28,7 @@
     "expo-modules-core": "^1.5.12",
     "expo-status-bar": "~1.7.1",
     "firebase": "^10.7.1",
-    "nvm": "0.39.0",
+    "nvm": "0.39.7",
     "postcss": "^8.4.33",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -55,7 +55,7 @@
     "prettier": "^3.2.2"
   },
   "private": true,
-  "name": "Sport_betting_bot",
+  "name": "Sport-betting-bot",
   "version": "1.0.0",
   "description": "Bot for betting on sport events with prediction",
   "repository": "https://github.com/Dinamitrii/ChatGPT_Sports_Betting_Bot.git",

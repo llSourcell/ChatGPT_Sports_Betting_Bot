@@ -1,0 +1,68 @@
+const schema = [
+  {
+    enum: ['always', 'never'],
+    type: 'string',
+  },
+];
+
+const isSemicolon = (token) => token.type === 'Punctuator' && token.value === ';';
+
+const create = (context) => {
+  const never = (context.options[0] || 'always') === 'never';
+  const sourceCode = context.getSourceCode();
+
+  const report = (node, missing) => {
+    const lastToken = sourceCode.getLastToken(node);
+    let fix;
+    let message;
+    let { loc } = lastToken;
+
+    if (missing) {
+      message = 'Missing semicolon.';
+      loc = loc.end;
+      fix = (fixer) => fixer.insertTextAfter(lastToken, ';');
+    } else {
+      message = 'Extra semicolon.';
+      loc = loc.start;
+      fix = (fixer) => fixer.remove(lastToken);
+    }
+
+    context.report({
+      fix,
+      loc,
+      message,
+      node,
+    });
+  };
+
+  const checkForSemicolon = (node) => {
+    const lastToken = sourceCode.getLastToken(node);
+    const isLastTokenSemicolon = isSemicolon(lastToken);
+
+    if (never && isLastTokenSemicolon) {
+      report(node, false);
+    }
+
+    if (!never && !isLastTokenSemicolon) {
+      report(node, true);
+    }
+  };
+
+  return {
+    OpaqueType: checkForSemicolon,
+    TypeAlias: checkForSemicolon,
+    TypeAnnotation: (node) => {
+      if (['PropertyDefinition', 'ClassProperty'].includes(node.parent.type)) {
+        checkForSemicolon(node.parent);
+      }
+    },
+  };
+};
+
+export default {
+  create,
+  meta: {
+    fixable: 'code',
+  },
+  schema,
+};

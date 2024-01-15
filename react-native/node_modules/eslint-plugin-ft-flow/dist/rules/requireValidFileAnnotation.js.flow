@@ -1,0 +1,156 @@
+import _ from 'lodash';
+
+import {
+  isFlowFileAnnotation,
+  fuzzyStringMatch,
+} from '../utilities';
+
+const defaults = {
+  annotationStyle: 'none',
+  strict: false,
+};
+
+const looksLikeFlowFileAnnotation = (comment) => /@(?:no)?flo/ui.test(comment);
+
+const isValidAnnotationStyle = (node, style) => {
+  if (style === 'none') {
+    return true;
+  }
+
+  return style === node.type.toLowerCase();
+};
+
+const checkAnnotationSpelling = (comment) => /@[a-z]+\b/u.test(comment) && fuzzyStringMatch(comment.replace(/no/ui, ''), '@flow', 0.2);
+
+const isFlowStrict = (comment) => /^@flow\sstrict\b/u.test(comment);
+
+const noFlowAnnotation = (comment) => /^@noflow\b/u.test(comment);
+
+const schema = [
+  {
+    enum: ['always', 'never'],
+    type: 'string',
+  },
+  {
+    additionalProperties: false,
+    properties: {
+      annotationStyle: {
+        enum: ['none', 'line', 'block'],
+        type: 'string',
+      },
+      strict: {
+        enum: [true, false],
+        type: 'boolean',
+      },
+    },
+    type: 'object',
+  },
+];
+
+const create = (context) => {
+  const always = context.options[0] === 'always';
+  const style = _.get(context, 'options[1].annotationStyle', defaults.annotationStyle);
+  const flowStrict = _.get(context, 'options[1].strict', defaults.strict);
+
+  return {
+    Program(node) {
+      const firstToken = node.tokens[0];
+
+      const potentialFlowFileAnnotation = _.find(
+        context.getSourceCode().getAllComments(),
+        (comment) => looksLikeFlowFileAnnotation(comment.value),
+      );
+
+      if (potentialFlowFileAnnotation) {
+        if (firstToken && firstToken.range[0] < potentialFlowFileAnnotation.range[0]) {
+          context.report({ message: 'Flow file annotation not at the top of the file.', node: potentialFlowFileAnnotation });
+        }
+
+        const annotationValue = potentialFlowFileAnnotation.value.trim();
+
+        if (isFlowFileAnnotation(annotationValue)) {
+          if (!isValidAnnotationStyle(potentialFlowFileAnnotation, style)) {
+            const annotation = style === 'line' ? `// ${annotationValue}` : `/* ${annotationValue} */`;
+
+            context.report({
+              fix: (fixer) => fixer.replaceTextRange(
+                [
+                  potentialFlowFileAnnotation.range[0],
+                  potentialFlowFileAnnotation.range[1],
+                ],
+                annotation,
+              ),
+              message: `Flow file annotation style must be \`${annotation}\``,
+              node: potentialFlowFileAnnotation,
+            });
+          }
+
+          if (!noFlowAnnotation(annotationValue) && flowStrict && !isFlowStrict(annotationValue)) {
+            const str = style === 'line' ? '`// @flow strict`' : '`/* @flow strict */`';
+
+            context.report({
+              fix: (fixer) => {
+                const annotation = ['line', 'none'].includes(style) ? '// @flow strict' : '/* @flow strict */';
+
+                return fixer.replaceTextRange([
+                  potentialFlowFileAnnotation.range[0],
+                  potentialFlowFileAnnotation.range[1],
+                ], annotation);
+              },
+              message: `Strict Flow file annotation is required, must be ${str}`,
+              node,
+            });
+          }
+        } else if (checkAnnotationSpelling(annotationValue)) {
+          context.report({ message: 'Misspelled or malformed Flow file annotation.', node: potentialFlowFileAnnotation });
+        } else {
+          context.report({ message: 'Malformed Flow file annotation.', node: potentialFlowFileAnnotation });
+        }
+      } else if (always && !_.get(context, 'settings[\'ft-flow\'].onlyFilesWithFlowAnnotation')) {
+        context.report({
+          fix: (fixer) => {
+            let annotation;
+
+            if (flowStrict) {
+              annotation = ['line', 'none'].includes(style) ? '// @flow strict\n' : '/* @flow strict */\n';
+            } else {
+              annotation = ['line', 'none'].includes(style) ? '// @flow\n' : '/* @flow */\n';
+            }
+
+            const firstComment = node.comments[0];
+
+            if (firstComment && firstComment.type === 'Shebang') {
+              return fixer
+                .replaceTextRange(
+                  [
+                    firstComment.range[1],
+                    firstComment.range[1],
+                  ],
+                  `\n${annotation.trim()}`,
+                );
+            }
+
+            return fixer
+              .replaceTextRange(
+                [
+                  node.range[0],
+                  node.range[0],
+                ],
+                annotation,
+              );
+          },
+          message: 'Flow file annotation is missing.',
+          node,
+        });
+      }
+    },
+  };
+};
+
+export default {
+  create,
+  meta: {
+    fixable: 'code',
+  },
+  schema,
+};

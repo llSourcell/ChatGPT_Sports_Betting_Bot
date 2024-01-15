@@ -1,0 +1,49 @@
+{
+  "parser": "@babel/eslint-parser",
+  "plugins": [
+    "ft-flow"
+  ],
+  "settings": {
+    "ft-flow": {
+      "onlyFilesWithFlowAnnotation": false
+    }
+  },
+  "rules": {
+    "ft-flow/boolean-style": [
+      2,
+      "boolean"
+    ],
+    "ft-flow/define-flow-type": 1,
+    "ft-flow/delimiter-dangle": 0,
+    "ft-flow/generic-spacing": [
+      2,
+      "never"
+    ],
+    "ft-flow/no-mixed": 0,
+    "ft-flow/no-types-missing-file-annotation": 2,
+    "ft-flow/no-weak-types": 0,
+    "ft-flow/require-parameter-type": 0,
+    "ft-flow/require-readonly-react-props": 0,
+    "ft-flow/require-return-type": 0,
+    "ft-flow/require-valid-file-annotation": 0,
+    "ft-flow/semi": 0,
+    "ft-flow/space-after-type-colon": [
+      2,
+      "always"
+    ],
+    "ft-flow/space-before-generic-bracket": [
+      2,
+      "never"
+    ],
+    "ft-flow/space-before-type-colon": [
+      2,
+      "never"
+    ],
+    "ft-flow/type-id-match": 0,
+    "ft-flow/union-intersection-spacing": [
+      2,
+      "always"
+    ],
+    "ft-flow/use-flow-type": 1
+  }
+}
