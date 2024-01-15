@@ -2,6 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/expo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/expo/react-native-lab/react-native" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/react-native" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/spec" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/spec/document/core/util/katex" vcs="Git" />
