@@ -32,7 +32,7 @@
     "postcss": "^8.4.33",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.73.2",
+    "react-native": "^0.73.2",
     "react-native-gesture-handler": "~2.14.1",
     "react-native-paper": "^5.12.1",
     "react-native-reanimated": "^3.6.1",
@@ -40,7 +40,9 @@
     "react-native-screens": "~3.29.0",
     "react-native-status-bar-height": "^2.6.0",
     "react-native-svg": "^14.1.0",
-    "react-native-web": "^0.19.10"
+    "react-native-web": "^0.19.10",
+    "tar": "^6.2.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@babel/core": "~7.23.7",
@@ -55,10 +57,22 @@
     "prettier": "^3.2.2"
   },
   "private": true,
-  "name": "Sport-betting-bot",
-  "version": "1.0.0",
+  "name": "sport-betting-bot",
+  "version": "1.0.1",
   "description": "Bot for betting on sport events with prediction",
-  "repository": "https://github.com/Dinamitrii/ChatGPT_Sports_Betting_Bot.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dinamitrii/ChatGPT_Sports_Betting_Bot.git"
+  },
   "author": "dinamitrii <k_karaivanov@abv.bg>",
-  "license": "mit"
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/Dinamitrii/ChatGPT_Sports_Betting_Bot/issues"
+  },
+  "homepage": "https://github.com/Dinamitrii/ChatGPT_Sports_Betting_Bot#readme",
+  "keywords": [
+    "sport",
+    "bettings",
+    "bot"
+  ]
 }
