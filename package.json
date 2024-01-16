@@ -61,7 +61,10 @@
   "name": "sport-betting-bot",
   "version": "1.0.2",
   "description": "Bot for betting on sport events with prediction",
-  "repository": "git+https://github.com/Dinamitrii/ChatGPT_Sports_Betting_Bot.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dinamitrii/ChatGPT_Sports_Betting_Bot.git"
+  },
   "author": "dinamitrii <k_karaivanov@abv.bg>",
   "license": "Unlicense",
   "bugs": {
