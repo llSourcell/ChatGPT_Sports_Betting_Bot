@@ -31,4 +31,4 @@ export const IOS_GOOGLE_CLIENT_ID =
 // Replace with your own facebook app ID.
 // You can find more information how to generate one here:
 // https://docs.expo.io/versions/latest/sdk/facebook/#registering-your-app-with-facebook
-export const FACEBOOK_APP_ID = '820370405209413'
+export const FACEBOOK_APP_ID = '8203704e5209413'
