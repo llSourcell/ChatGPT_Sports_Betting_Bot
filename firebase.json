@@ -1,6 +1,0 @@
-{
-  "database": {
-    "rules": "database.rules.json"
-  },
-  "extensions": {}
-}

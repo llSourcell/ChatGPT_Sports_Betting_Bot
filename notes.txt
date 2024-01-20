@@ -1,0 +1,66 @@
+https://arxiv.org/pdf/1710.02824.pdf
+https://www.sportsbookreviewsonline.com/scoresoddsarchives/nba/nbaoddsarchives.htm
+https://www.youtube.com/watch?v=wQ8BIBpya2k
+Random Forrest
+https://www.analyticsvidhya.com/blog/2015/09/random-forest-algorithm-multiple-challenges/?utm_source=blog&utm_medium=understandingsupportvectormachinearticle
+naive bayes
+Support Vector Machine
+LSTM
+Recurrent
+Support Vector Regression
+
+recurrent NN
+
+
+https://www.youtube.com/watch?v=BqgTU7_cBnk
+
+Hyperparameter tuning
+https://www.youtube.com/watch?v=vvC15l4CY1Q
+
+FIX ODDS-DATA
+1-24-16 Raptors.....OKC
+
+Miles travled since last game?
+Days since last game
+
+https://klane.github.io/databall
+https://www.covers.com
+https://www.oddsportal.com
+
+Leaky ReLu for most
+try elu and selu
+
+# xgb.plot_tree(model)
+# plt.show()
+# plt.savefig("graph.pdf")
+
+look into tensorboard/ callbacks. Improve NN arc. See what data is helpful with a confusion matrix.
+Normalize data?
+Improve NN performance
+https://machinelearningmastery.com/improve-deep-learning-performance/
+https://www.tensorflow.org/tutorials/keras/keras_tuner
+https://www.youtube.com/watch?v=k7KfYXXrOj0
+https://keras.io/api/layers/
+https://medium.com/@Mandysidana/machine-learning-types-of-classification-9497bd4f2e14
+
+
+More Data:
+    Depth 2 - 67.38399999999999
+    Depth 3 - 67.34200000000001
+    Depth 5 - 67.12200000000001
+    Depth 7 - 66.62600000000002
+
+    https://www.gamblingsites.org/sports-betting/kelly-criterion/
+
+https://cs229.stanford.edu/proj2018/report/3.pdf
+    Neural Network: We use four fully-connected layers, reducing the input of dimension 1524 to size 500, then 100,
+    then 20, then finally a 1-dimensional output that predicts the Over- Under of the desired game (see Figure 2).
+    We used a weight decay parameter of 1 to regularize the weights of the network,
+    and a learning rate of 10−6 over 5000 epochs, using Gradient Descent.
+    This allowed the network to roughly train to convergence (see Figure 5)
+
+    When we were training the models, we found while we had data available starting from the 2007 − 2008 season,
+    we achieved the highest levels of validation accuracy when the training dataset started from the 2012 − 2013 season
+    rather than from the 2007 − 2008 season.
+    This suggests that the earlier seasons are not very representative of the validation season
+    (which was the 2016 − 2017 season) possibly because of the changing nature of the NBA
