@@ -20,7 +20,7 @@ https://www.youtube.com/watch?v=vvC15l4CY1Q
 FIX ODDS-DATA
 1-24-16 Raptors.....OKC
 
-Miles travled since last game?
+Miles traveled since last game?
 Days since last game
 
 https://klane.github.io/databall
